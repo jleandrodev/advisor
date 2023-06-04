@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link href="/fonts/tw-icons/css/treinaweb-icons.css" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header />
+        <Header name="Rosana" />
         <Component {...pageProps} />;
       </ThemeProvider>
     </>
