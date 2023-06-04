@@ -3,6 +3,7 @@ import { AppBar, Avatar, Button } from "@mui/material";
 
 export const HeaderAppBar = styled(AppBar)`
   background-color: ${({ theme }) => theme.palette.background.paper};
+  padding: ${({ theme }) => theme.spacing(2)} 0;
 `;
 
 export const HeaderLogo = styled("img")`
