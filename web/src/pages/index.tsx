@@ -1,7 +1,12 @@
 import { NextPage } from "next";
+import Hero from "ui/components/data-display/Hero/Hero";
 
 const Home: NextPage = () => {
-  return <>Index</>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default Home;

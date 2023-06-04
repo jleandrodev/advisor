@@ -1,10 +1,13 @@
-import { HeaderContainer } from "./Header.style";
+import { Container, Toolbar } from "@mui/material";
+import { HeaderAppBar, HeaderLogo } from "./Header.style";
 
 const Header: React.FC = () => {
   return (
-    <HeaderContainer>
-      <h1>Header</h1>
-    </HeaderContainer>
+    <HeaderAppBar position={"sticky"}>
+      <Toolbar component={Container}>
+        <HeaderLogo src="/img/logo.png" alt={"Logo da Web Advisor"} />
+      </Toolbar>
+    </HeaderAppBar>
   );
 };
 

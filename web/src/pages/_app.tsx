@@ -9,8 +9,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Advisor</title>
+        <title>Advisor </title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
