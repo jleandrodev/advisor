@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ThemeProvider } from "@mui/material";
 import theme from "ui/themes/theme";
 import Header from "ui/components/surfaces/Header/Header";
+import Footer from "ui/components/surfaces/Footer/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -27,7 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         <Header name="Rosana" />
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
     </>
   );
