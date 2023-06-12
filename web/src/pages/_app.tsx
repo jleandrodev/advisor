@@ -1,12 +1,15 @@
 import "@styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ThemeProvider } from "@mui/material";
+import { Box, Container, ThemeProvider } from "@mui/material";
 import theme from "ui/themes/theme";
 import Header from "ui/components/surfaces/Header/Header";
 import Footer from "ui/components/surfaces/Footer/Footer";
+import Drawer from "ui/components/surfaces/Drawer/Drawer";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Head>
@@ -27,9 +30,14 @@ export default function App({ Component, pageProps }: AppProps) {
         <link href="/fonts/tw-icons/css/treinaweb-icons.css" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header name="Rosana" />
-        <Component {...pageProps} />
-        <Footer />
+        <Header isOpen={isOpen} name="Rosana" setDrawer={setIsOpen} />
+        <Box sx={{ display: "flex" }}>
+          <Drawer isOpen={isOpen} />
+          <Container>
+            <Component {...pageProps} />
+            <Footer />
+          </Container>
+        </Box>
       </ThemeProvider>
     </>
   );

@@ -7,6 +7,8 @@ import {
   RightSide,
 } from "./Header.style";
 import MenuIcon from "@mui/icons-material/Menu";
+import useOpenDrawer from "data/hooks/useOpenDrawer";
+import { useEffect } from "react";
 
 interface UserProps {
   name: string;
@@ -14,9 +16,16 @@ interface UserProps {
   role?: string;
   mail?: string;
   picture?: string;
+  setDrawer: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean | null;
 }
 
-const Header: React.FC<UserProps> = ({ name, picture }) => {
+const Header: React.FC<UserProps> = ({
+  name,
+  picture,
+  setDrawer,
+  isOpen = false,
+}) => {
   return (
     <HeaderAppBar position={"sticky"}>
       <Toolbar component={Container}>
@@ -25,7 +34,7 @@ const Header: React.FC<UserProps> = ({ name, picture }) => {
           <AvatarStyled sx={{ bgcolor: "#9661ff" }} alt={name} src={picture}>
             {name[0]}
           </AvatarStyled>
-          <ButtonStyled variant="outlined">
+          <ButtonStyled variant="outlined" onClick={() => setDrawer(!isOpen)}>
             MENU
             <MenuIcon />
           </ButtonStyled>

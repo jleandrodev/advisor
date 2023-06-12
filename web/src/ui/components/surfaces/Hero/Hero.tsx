@@ -3,14 +3,14 @@ import { HeroContainer, HeroSubtitle, HeroTitle } from "./Hero.style";
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <Container>
+    <Container>
+      <HeroContainer>
         <HeroTitle>Hello Rosana!</HeroTitle>
         <HeroSubtitle>
           Hora de continuar tornando sonhos realidade!
         </HeroSubtitle>
-      </Container>
-    </HeroContainer>
+      </HeroContainer>
+    </Container>
   );
 };
 

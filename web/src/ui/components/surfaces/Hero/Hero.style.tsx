@@ -1,6 +1,8 @@
 import { styled } from "@mui/material";
 
 export const HeroContainer = styled("div")`
+  border-radius: 8px;
+  margin-top: ${({ theme }) => theme.spacing(3)};
   background: rgb(150, 97, 255);
   background: linear-gradient(
     162deg,
