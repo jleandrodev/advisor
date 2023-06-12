@@ -16,7 +16,7 @@ interface UserProps {
   role?: string;
   mail?: string;
   picture?: string;
-  setDrawer: Dispatch<SetStateAction<boolean>>;
+  setDrawer: (prop: boolean) => boolean;
   isOpen: boolean | null;
 }
 
