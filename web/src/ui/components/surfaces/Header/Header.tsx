@@ -16,7 +16,7 @@ interface UserProps {
   role?: string;
   mail?: string;
   picture?: string;
-  setDrawer: (prop: boolean) => boolean;
+  setDrawer: (prop: boolean) => void;
   isOpen: boolean | null;
 }
 
