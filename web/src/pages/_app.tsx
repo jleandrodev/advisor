@@ -5,8 +5,8 @@ import { Box, Container, ThemeProvider } from "@mui/material";
 import theme from "ui/themes/theme";
 import Header from "ui/components/surfaces/Header/Header";
 import Footer from "ui/components/surfaces/Footer/Footer";
-import Drawer from "ui/components/surfaces/Drawer/Drawer";
 import { useState } from "react";
+import SideBar from "ui/components/surfaces/Drawer/SideBar";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <link href="/fonts/tw-icons/css/treinaweb-icons.css" rel="stylesheet" />
       </Head>
       <ThemeProvider theme={theme}>
-        <Header isOpen={isOpen} name="Rosana" setDrawer={setIsOpen} />
+        <Header name="Rosana" />
         <Box sx={{ display: "flex" }}>
-          <Drawer isOpen={isOpen} />
+          <SideBar />
           <Container>
             <Component {...pageProps} />
             <Footer />

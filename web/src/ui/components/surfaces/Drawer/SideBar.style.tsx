@@ -1,4 +1,4 @@
-import { Container, styled } from "@mui/material";
+import { Container, Typography, styled } from "@mui/material";
 
 export const DrawerContainer = styled(Container)`
   margin: 0;
@@ -32,5 +32,12 @@ export const DrawerContainer = styled(Container)`
   ${({ theme }) => theme.breakpoints.down("md")} {
     width: 0;
     padding: 0;
+    position: absolute;
+    height: 100vh;
+    z-index: 10;
   }
+`;
+
+export const ItemListTitle = styled(Typography)`
+  font-weight: bold;
 `;

@@ -1,4 +1,4 @@
-import { Button, Container, Toolbar } from "@mui/material";
+import { Container, Toolbar } from "@mui/material";
 import {
   AvatarStyled,
   ButtonStyled,
@@ -7,8 +7,7 @@ import {
   RightSide,
 } from "./Header.style";
 import MenuIcon from "@mui/icons-material/Menu";
-import useOpenDrawer from "data/hooks/useOpenDrawer";
-import { useEffect } from "react";
+import TemporaryDrawer from "../Drawer/TemporaryDrawer";
 
 interface UserProps {
   name: string;
@@ -16,16 +15,9 @@ interface UserProps {
   role?: string;
   mail?: string;
   picture?: string;
-  setDrawer: (prop: boolean) => void;
-  isOpen: boolean | null;
 }
 
-const Header: React.FC<UserProps> = ({
-  name,
-  picture,
-  setDrawer,
-  isOpen = false,
-}) => {
+const Header: React.FC<UserProps> = ({ name, picture }) => {
   return (
     <HeaderAppBar position={"sticky"}>
       <Toolbar component={Container}>
@@ -34,8 +26,8 @@ const Header: React.FC<UserProps> = ({
           <AvatarStyled sx={{ bgcolor: "#9661ff" }} alt={name} src={picture}>
             {name[0]}
           </AvatarStyled>
-          <ButtonStyled variant="outlined" onClick={() => setDrawer(!isOpen)}>
-            MENU
+          <ButtonStyled variant="outlined">
+            <TemporaryDrawer />
             <MenuIcon />
           </ButtonStyled>
         </RightSide>
