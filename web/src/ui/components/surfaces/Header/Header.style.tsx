@@ -26,4 +26,8 @@ export const AvatarStyled = styled(Avatar)``;
 export const ButtonStyled = styled(Button)`
   display: flex;
   gap: ${({ theme }) => theme.spacing(1)};
+
+  ${({ theme }) => theme.breakpoints.up("md")} {
+    display: none;
+  }
 `;

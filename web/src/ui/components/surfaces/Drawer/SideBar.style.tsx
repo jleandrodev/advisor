@@ -2,7 +2,7 @@ import { Container, Typography, styled } from "@mui/material";
 
 export const DrawerContainer = styled(Container)`
   margin: 0;
-  width: 90px;
+  width: 220px;
   background-color: ${({ theme }) => theme.palette.background.paper};
   transition: 0.3s;
 
@@ -22,6 +22,7 @@ export const DrawerContainer = styled(Container)`
     transition: 0.3s;
     gap: ${({ theme }) => theme.spacing(2)};
     color: ${({ theme }) => theme.palette.primary.main};
+    cursor: pointer;
   }
 
   &.isOpen {
@@ -40,4 +41,5 @@ export const DrawerContainer = styled(Container)`
 
 export const ItemListTitle = styled(Typography)`
   font-weight: bold;
+  color: ${({ theme }) => theme.palette.primary.main};
 `;

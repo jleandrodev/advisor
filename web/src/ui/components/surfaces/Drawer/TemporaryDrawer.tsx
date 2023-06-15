@@ -14,15 +14,36 @@ import CelebrationIcon from "@mui/icons-material/Celebration";
 import PaidIcon from "@mui/icons-material/Paid";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import { Typography } from "@mui/material";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
-const ItemList = [
-  { name: "Eventos", link: "/", icon: <CelebrationIcon /> },
-  { name: "Tarefas", link: "/", icon: <CelebrationIcon /> },
-  { name: "Equipe", link: "/", icon: <CelebrationIcon /> },
-  { name: "Agenda", link: "/", icon: <CelebrationIcon /> },
-  { name: "Finanças", link: "/", icon: <CelebrationIcon /> },
+export const ItemList = [
+  {
+    id: 1,
+    name: "Eventos",
+    link: "/",
+    icon: <CelebrationIcon fontSize={"large"} />,
+  },
+  {
+    id: 2,
+    name: "Tarefas",
+    link: "/",
+    icon: <TaskAltIcon fontSize={"large"} />,
+  },
+  {
+    id: 3,
+    name: "Equipe",
+    link: "/",
+    icon: <Diversity1Icon fontSize={"large"} />,
+  },
+  {
+    id: 4,
+    name: "Agenda",
+    link: "/",
+    icon: <CalendarMonthIcon fontSize={"large"} />,
+  },
+  { id: 5, name: "Finanças", link: "/", icon: <PaidIcon fontSize={"large"} /> },
 ];
 
 export default function TemporaryDrawer() {
@@ -49,24 +70,30 @@ export default function TemporaryDrawer() {
 
   const list = (anchor: Anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Eventos", "Tarefas", "Equipe", "Agenda", "Finanças"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          )
-        )}
+        {ItemList.map((item) => (
+          <ListItem key={item.id} disablePadding>
+            <ListItemButton
+              sx={{ color: (theme) => theme.palette.primary.main }}
+            >
+              <ListItemIcon
+                sx={{ color: (theme) => theme.palette.primary.main }}
+              >
+                {item.icon}
+              </ListItemIcon>
+              <Typography style={{ fontWeight: "bold" }}>
+                {item.name}
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
