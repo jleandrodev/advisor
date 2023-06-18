@@ -27,7 +27,7 @@ const Header: React.FC<UserProps> = ({ name, picture }) => {
             {name[0]}
           </AvatarStyled>
           <ButtonStyled variant="outlined">
-            <TemporaryDrawer />
+            {/* <TemporaryDrawer /> */}
             <MenuIcon />
           </ButtonStyled>
         </RightSide>

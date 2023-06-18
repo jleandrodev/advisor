@@ -5,11 +5,9 @@ import { Box, Container, ThemeProvider } from "@mui/material";
 import theme from "ui/themes/theme";
 import Header from "ui/components/surfaces/Header/Header";
 import Footer from "ui/components/surfaces/Footer/Footer";
-import { useState } from "react";
 import SideBar from "ui/components/surfaces/Drawer/SideBar";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Head>
@@ -35,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <SideBar />
           <Container>
             <Component {...pageProps} />
+
             <Footer />
           </Container>
         </Box>
