@@ -1,11 +1,11 @@
+import { Box, Container, ThemeProvider } from "@mui/material";
 import "@styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Box, Container, ThemeProvider } from "@mui/material";
-import theme from "ui/themes/theme";
-import Header from "ui/components/surfaces/Header/Header";
-import Footer from "ui/components/surfaces/Footer/Footer";
 import SideBar from "ui/components/surfaces/Drawer/SideBar";
+import Footer from "ui/components/surfaces/Footer/Footer";
+import Header from "ui/components/surfaces/Header/Header";
+import theme from "ui/themes/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -33,10 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <SideBar />
           <Container>
             <Component {...pageProps} />
-
-            <Footer />
           </Container>
         </Box>
+        <Footer />
       </ThemeProvider>
     </>
   );

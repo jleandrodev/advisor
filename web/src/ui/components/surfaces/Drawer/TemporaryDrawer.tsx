@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -12,6 +11,8 @@ import PaidIcon from "@mui/icons-material/Paid";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import { Typography } from "@mui/material";
+import { ButtonStyled } from "./TemporaryDrawer.style";
+import MenuIcon from "@mui/icons-material/Menu";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -45,10 +46,7 @@ export const ItemList = [
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
-    top: false,
     left: false,
-    bottom: false,
-    right: false,
   });
 
   const toggleDrawer =
@@ -97,7 +95,9 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      <Button onClick={toggleDrawer("left", true)}>MENU</Button>
+      <ButtonStyled onClick={toggleDrawer("left", true)}>
+        <MenuIcon sx={{ fontSize: 38 }} />
+      </ButtonStyled>
       <Drawer
         anchor={"left"}
         open={state["left"]}

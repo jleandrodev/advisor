@@ -1,12 +1,10 @@
 import { Container, Toolbar } from "@mui/material";
 import {
   AvatarStyled,
-  ButtonStyled,
   HeaderAppBar,
   HeaderLogo,
   RightSide,
 } from "./Header.style";
-import MenuIcon from "@mui/icons-material/Menu";
 import TemporaryDrawer from "../Drawer/TemporaryDrawer";
 
 interface UserProps {
@@ -26,10 +24,7 @@ const Header: React.FC<UserProps> = ({ name, picture }) => {
           <AvatarStyled sx={{ bgcolor: "#9661ff" }} alt={name} src={picture}>
             {name[0]}
           </AvatarStyled>
-          <ButtonStyled variant="outlined">
-            {/* <TemporaryDrawer /> */}
-            <MenuIcon />
-          </ButtonStyled>
+          <TemporaryDrawer />
         </RightSide>
       </Toolbar>
     </HeaderAppBar>
