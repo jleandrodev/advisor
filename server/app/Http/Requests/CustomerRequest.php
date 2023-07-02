@@ -25,10 +25,11 @@ class CustomerRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255'],
-            'phone' => ['required', 'max:11'],
+            'phone' => ['nullable', 'max:16'],
+            'cel' => ['required', 'max:16'],
             'email' => ['nullable', 'max:100'],
             'cep' => ['nullable', 'max:9'],
-            'cpf' => ['nullable', 'max:14'],
+            'doc' => ['nullable', 'max:18'],
             'adress' => ['nullable', 'max:100'],
             'city' => ['nullable', 'max:100'],
             'state' => ['nullable', 'size:2'],

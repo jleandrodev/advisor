@@ -11,24 +11,33 @@
     </div>
 </div>
 <div class="form-group row">
-    <label for="name" class="col-form-label col-sm-2 required">CPF</label>
+    <label for="name" class="col-form-label col-sm-2 required">CPF/CNPJ</label>
     <div class="col-sm-10">
         @error('cpf')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <input type="text" name="cpf" maxlength="14" class="form-control @error('cpf') is-invalid @enderror"
-            value="{{ old('cpf') }}" />
+        <input type="text" name="doc" maxlength="14"
+            class="cpf_cnpj form-control @error('doc') is-invalid @enderror" value="{{ old('doc') }}" />
     </div>
 </div>
 <div class="form-group row">
-    <label for="name" class="col-form-label col-sm-2 required">Telefone<span
-            class="phone text-danger">*</span></label>
+    <label for="name" class="col-form-label col-sm-2 required">Telefone</label>
     <div class="col-sm-10">
         @error('phone')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <input type="text" name="phone" maxlength="15" class="form-control @error('phone') is-invalid @enderror"
-            value="{{ old('phone') }}" />
+        <input type="text" name="phone" maxlength="14"
+            class="phone form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" />
+    </div>
+</div>
+<div class="form-group row">
+    <label for="name" class="col-form-label col-sm-2 required">Celular<span class="text-danger">*</span></label>
+    <div class="col-sm-10">
+        @error('cel')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <input type="text" name="cel" maxlength="16" class="cel form-control @error('cel') is-invalid @enderror"
+            value="{{ old('cel') }}" />
     </div>
 </div>
 <div class="form-group row">

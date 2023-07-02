@@ -34,3 +34,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 require('../adminLTE/dist/js/adminlte');
+
+// Plugin de mascara de inputs
+require('../adminLTE/plugins/jquery-mask/dist/jquery.mask');
+
+// Mask define
+require('./masks');
