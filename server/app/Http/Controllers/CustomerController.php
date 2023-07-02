@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,11 @@ class CustomerController extends Controller
      *
      *
      */
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
-        dd($request->all());
+        $customer = Customer::create($request->all());
+
+        return \redirect()->route('customers.show', $customer->id);
     }
 
     /**
@@ -45,7 +48,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('layouts.customers.show');
     }
 
     /**

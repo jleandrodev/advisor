@@ -6,6 +6,9 @@
 
 @section('breadcrumb')
     <li class="breadcrumb-item">
+        <a class="text-decoration-none" href="{{ route('home') }}">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item">
         <a class="text-decoration-none" href="{{ route('customers.index') }}">Lista de Clientes</a>
     </li>
 @endsection

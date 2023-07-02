@@ -41,8 +41,6 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a class="text-decoration-none"
-                                        href="{{ route('home') }}">Dashboard</a></li>
                                 @yield('breadcrumb')
                             </ol>
                         </div>
@@ -64,9 +62,6 @@
         </footer>
 
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/adminlte.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
 
 </body>
 
